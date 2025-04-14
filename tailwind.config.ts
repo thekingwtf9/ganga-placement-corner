@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                gmec: {
+                    blue: '#0055a5',
+                    lightBlue: '#0099ff',
+                    red: '#ff0000',
+                    orange: '#ff9900',
+                    yellow: '#ffcc00',
+                    green: '#00cc00',
+                },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +93,37 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'marquee': {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                },
+                'fade-in': {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+                'bounce-light': {
+                    '0%, 100%': {
+                        transform: 'translateY(-2%)',
+                        animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+                    },
+                    '50%': {
+                        transform: 'translateY(0)',
+                        animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'marquee': 'marquee 25s linear infinite',
+                'fade-in': 'fade-in 0.5s ease-out',
+                'bounce-light': 'bounce-light 2s infinite'
+			},
+            fontFamily: {
+                sans: ['Arial', 'sans-serif'],
+                serif: ['Times New Roman', 'serif'],
+            },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
